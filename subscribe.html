@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script>
+    var params   = new URLSearchParams(window.location.search);
+    var campaign = params.get('utm_campaign') || params.get('tag') || '';
+    var langue   = campaign ? campaign.split('-').pop() : '';
+
+    // Memoriser le tag dans localStorage
+    if (campaign) {
+      localStorage.setItem('kit_campaign', campaign);
+      localStorage.setItem('kit_langue', langue);
+    }
+
+    // Rediriger vers la bonne landing page Kit selon la langue
+    var kitUrls = {
+      'en': 'https://abdo-edition.kit.com/free-sample-en',
+      'fr': 'https://abdo-edition.kit.com/free-sample-fr',
+      'de': 'https://abdo-edition.kit.com/free-sample-de',
+      'es': 'https://abdo-edition.kit.com/free-sample-es',
+      'it': 'https://abdo-edition.kit.com/free-sample-it',
+      'pl': 'https://abdo-edition.kit.com/free-sample-pl',
+      'sv': 'https://abdo-edition.kit.com/free-sample-sv',
+      'pt': 'https://abdo-edition.kit.com/free-sample-pt',
+      'nl': 'https://abdo-edition.kit.com/free-sample-nl'
+    };
+
+    var kitBase = kitUrls[langue] || 'https://abdo-edition.kit.com/free-sample-en';
+    
+    // Ajouter ?tag= ET utm_campaign pour que Kit applique le tag automatiquement
+    var kitUrl = kitBase + 
+      '?tag=' + campaign +
+      '&utm_source=pinterest' +
+      '&utm_medium=pin' +
+      '&utm_campaign=' + campaign;
+
+    window.location.replace(kitUrl);
+  </script>
+</head>
+<body></body>
+</html>
