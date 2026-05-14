@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script>
+    // Lire les données passées par Kit dans l'URL
+    var params   = new URLSearchParams(window.location.search);
+    var email    = params.get('email') || '';
+    var prenom   = params.get('first_name') || '';
+    var campaign = localStorage.getItem('kit_campaign') || '';
+
+    // Nettoyer localStorage
+    if (campaign) {
+      localStorage.removeItem('kit_campaign');
+      localStorage.removeItem('kit_langue');
+    }
+
+    // URL Apps Script — remplacer par votre URL de deploiement
+    var APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby30wdHArXMjq0Puq_1F_X7mtyuXfyBxVd_tMmyxcQaJPYbWx2xnbUV0AlGLtSVfPwH/exec';
+
+    // Appeler Apps Script en arriere-plan si email + tag disponibles
+    if (email && campaign) {
+      var githubUrl = 'https://abdo-edition.github.io/pod/' + campaign;
+
+      fetch(APPS_SCRIPT_URL, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+          email:     email,
+          prenom:    prenom,
+          githubUrl: githubUrl,
+          action:    'sendEmail'
+        }),
+        mode: 'no-cors'
+      }).catch(function(err) {
+        console.log('Erreur:', err);
+      });
+    }
+
+    // Rediriger vers la collection GitHub
+    if (campaign) {
+      window.location.replace('https://abdo-edition.github.io/pod/' + campaign);
+    } else {
+      window.location.replace('https://abdo-edition.github.io/pod/');
+    }
+  </script>
+</head>
+<body></body>
+</html>
