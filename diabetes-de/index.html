@@ -31,19 +31,22 @@
   background:var(--orange);
   color:white;
   text-decoration:none;
-  padding:12px;
+  padding:12px 20px;
   border-radius:2px;
-  font-size:12px;
+  font-size:11px;
   font-weight:600;
-  letter-spacing:1px;
+  letter-spacing:1.5px;
   text-transform:uppercase;
   margin-top:auto;
   transition:background 0.2s;
-  white-space:nowrap;       /* ← texte sur une seule ligne */
+  white-space:nowrap;
+  width:100%;
+  box-sizing:border-box;
 }
 .btn-amazon::before{
-  content:"🛒";           /* ← icône chariot */
+  content:"🛒";
   font-size:15px;
+  flex-shrink:0;
 }
 .btn-amazon:hover{background:#ff6a2a}
 
