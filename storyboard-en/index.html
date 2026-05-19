@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Carnets De Caisse Simple | Abdo Edition</title><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"><style>:root{--orange:#FF4D00;--dark:#1E2A3A;--light:#F5F2EE;--gray:#888;--card-bg:#1A1A1A}*{margin:0;padding:0;box-sizing:border-box}body{background:var(--dark);color:var(--light);font-family:'DM Sans',sans-serif}.hero{min-height:35vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:50px 20px 30px;background:linear-gradient(180deg,#0a1520 0%,#1E2A3A 100%)}.logo-img{width:120px;height:auto;margin-bottom:20px;filter:drop-shadow(0 4px 12px rgba(255,77,0,0.3))}.hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,10vw,100px);line-height:0.95;letter-spacing:2px;margin-bottom:16px}.hero h1 span{color:var(--orange)}.hero p{font-size:16px;color:var(--gray);max-width:500px;line-height:1.6}.divider{width:60px;height:3px;background:var(--orange);margin:24px auto}.highlights{background:#111;border-top:1px solid #222;border-bottom:1px solid #222;padding:40px 20px}.highlights-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:30px;text-align:center}.highlight-item{display:flex;flex-direction:column;align-items:center;gap:10px}.highlight-icon{font-size:32px}.highlight-title{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:1px;color:var(--orange)}.highlight-text{font-size:12px;color:var(--gray);line-height:1.5}
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Storyboard Logbooks | Abdo Edition</title><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"><style>:root{--orange:#FF4D00;--dark:#1E2A3A;--light:#F5F2EE;--gray:#888;--card-bg:#1A1A1A}*{margin:0;padding:0;box-sizing:border-box}body{background:var(--dark);color:var(--light);font-family:'DM Sans',sans-serif}.hero{min-height:35vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:50px 20px 30px;background:linear-gradient(180deg,#0a1520 0%,#1E2A3A 100%)}.logo-img{width:120px;height:auto;margin-bottom:20px;filter:drop-shadow(0 4px 12px rgba(255,77,0,0.3))}.hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,10vw,100px);line-height:0.95;letter-spacing:2px;margin-bottom:16px}.hero h1 span{color:var(--orange)}.hero p{font-size:16px;color:var(--gray);max-width:500px;line-height:1.6}.divider{width:60px;height:3px;background:var(--orange);margin:24px auto}.highlights{background:#111;border-top:1px solid #222;border-bottom:1px solid #222;padding:40px 20px}.highlights-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:30px;text-align:center}.highlight-item{display:flex;flex-direction:column;align-items:center;gap:10px}.highlight-icon{font-size:32px}.highlight-title{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:1px;color:var(--orange)}.highlight-text{font-size:12px;color:var(--gray);line-height:1.5}
 
 /* ✅ MODIFICATION 1 : centrage des livres */
 .collection{max-width:1100px;margin:0 auto;padding:50px 20px 80px}
@@ -31,18 +31,22 @@
   background:var(--orange);
   color:white;
   text-decoration:none;
-  padding:12px;
+  padding:12px 20px;
   border-radius:2px;
-  font-size:12px;
+  font-size:11px;
   font-weight:600;
-  letter-spacing:1px;
+  letter-spacing:1.5px;
   text-transform:uppercase;
   margin-top:auto;
   transition:background 0.2s;
+  white-space:nowrap;
+  width:100%;
+  box-sizing:border-box;
 }
 .btn-amazon::before{
-  content:"🛒";           /* ← icône chariot */
+  content:"🛒";
   font-size:15px;
+  flex-shrink:0;
 }
 .btn-amazon:hover{background:#ff6a2a}
 
@@ -53,7 +57,7 @@ footer{text-align:center;padding:40px 20px;border-top:1px solid #1a1a1a;color:va
   .book-card{width:calc(50% - 6px)}  /* 2 colonnes sur mobile */
   .highlights-inner{grid-template-columns:1fr 1fr}
 }
-</style></head><body><section class="hero"><img src="https://abdo-edition.github.io/pod/Abdo_Edition_Logo.jpg" alt="Abdo Edition" class="logo-img"><h1>Carnets De Caisse Simple</h1><div class="divider"></div><p>Suivez chaque dépense et chaque revenu !</p></section><section class="highlights"><div class="highlights-inner"><div class="highlight-item"><span class="highlight-icon">💰</span><p class="highlight-title">Enregistrez tout</p><p class="highlight-text">Revenus, dépenses en un seul endroit</p></div><div class="highlight-item"><span class="highlight-icon">📦</span><p class="highlight-title">Premium Quality</p><p class="highlight-text">Imprimé sur papier de haute qualité, reliure parfaite</p></div><div class="highlight-item"><span class="highlight-icon">📊</span><p class="highlight-title">Aperçu Mensuel</p><p class="highlight-text">Résumé mensuel pour une vue financière claire</p></div><div class="highlight-item"><span class="highlight-icon">✅</span><p class="highlight-title">Simplifiez Vos Impôts</p><p class="highlight-text">Gardez le contrôle de vos finances et gagnez du temps lors de votre déclaration d'impôts</p></div></div></section><section class="collection"><p class="section-title">— Nos Carnets De Caisse Simpls —</p><div class="books-grid"><div class="book-card">
+</style></head><body><section class="hero"><img src="https://abdo-edition.github.io/pod/Abdo_Edition_Logo.jpg" alt="Abdo Edition" class="logo-img"><h1>Storyboard Logbooks</h1><div class="divider"></div><p>Plan Every Frame. Tell Every Story</p></section><section class="highlights"><div class="highlights-inner"><div class="highlight-item"><span class="highlight-icon">🎬</span><p class="highlight-title">Plan Every Shot</p><p class="highlight-text">120 pages to organize and plan every frame of your film, video blog or animation perfectly</p></div><div class="highlight-item"><span class="highlight-icon">📦</span><p class="highlight-title">Premium Quality</p><p class="highlight-text">Printed on high quality paper, perfect binding</p></div><div class="highlight-item"><span class="highlight-icon">✏️</span><p class="highlight-title">Built for Creatives</p><p class="highlight-text">Perfect for filmmakers, advertisers, graphic designers and animators — all in one professional journal</p></div><div class="highlight-item"><span class="highlight-icon">📐</span><p class="highlight-title">Premium Format</p><p class="highlight-text">Large 8.5x11 format with perfect matte softcover — the ideal companion for your creative projects</p></div></div></section><section class="collection"><p class="section-title">— Our Storyboard Logbooks —</p><div class="books-grid"><div class="book-card">
 <div class="book-image-wrapper">
 <img class="book-image" src="https://images-na.ssl-images-amazon.com/images/P/B09LGW6H8G.jpg" alt="Storyboard Log Book">
 </div>
