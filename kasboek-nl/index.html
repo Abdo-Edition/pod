@@ -1,63 +1,79 @@
 <!DOCTYPE html><html lang="nl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Kasboeken | Abdo Edition</title><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"><style>:root{--orange:#FF4D00;--dark:#1E2A3A;--light:#F5F2EE;--gray:#888;--card-bg:#1A1A1A}*{margin:0;padding:0;box-sizing:border-box}body{background:var(--dark);color:var(--light);font-family:'DM Sans',sans-serif}.hero{min-height:35vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:50px 20px 30px;background:linear-gradient(180deg,#0a1520 0%,#1E2A3A 100%)}.logo-img{width:120px;height:auto;margin-bottom:20px;filter:drop-shadow(0 4px 12px rgba(255,77,0,0.3))}.hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,10vw,100px);line-height:0.95;letter-spacing:2px;margin-bottom:16px}.hero h1 span{color:var(--orange)}.hero p{font-size:16px;color:var(--gray);max-width:500px;line-height:1.6}.divider{width:60px;height:3px;background:var(--orange);margin:24px auto}.highlights{background:#111;border-top:1px solid #222;border-bottom:1px solid #222;padding:40px 20px}.highlights-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:30px;text-align:center}.highlight-item{display:flex;flex-direction:column;align-items:center;gap:10px}.highlight-icon{font-size:32px}.highlight-title{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:1px;color:var(--orange)}.highlight-text{font-size:12px;color:var(--gray);line-height:1.5}
-
-/* ✅ MODIFICATION 1 : centrage des livres */
+ 
 .collection{max-width:1100px;margin:0 auto;padding:50px 20px 80px}
 .section-title{font-family:'Bebas Neue',sans-serif;font-size:30px;letter-spacing:3px;color:var(--gray);margin-bottom:30px;text-align:center}
-.books-grid{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;   /* ← centrage horizontal */
-  gap:20px;
-}
-.book-card{
-  background:var(--card-bg);
-  border-radius:4px;
-  padding:6px;
-  box-shadow:inset 0 0 0 3px #d32f2f;
-  transition:transform 0.3s ease,box-shadow 0.3s ease;
-  display:flex;
-  flex-direction:column;
-  width:220px;              /* ← largeur fixe pour le flex */
-  flex-shrink:0;
-}
-.book-card:hover{transform:translateY(-6px);box-shadow:inset 0 0 0 3px var(--orange),0 20px 40px rgba(255,77,0,0.15)}.book-image-wrapper{width:100%;display:flex;align-items:center;justify-content:center;background:#000;border-radius:2px}.book-image{width:100%;height:auto;object-fit:contain;display:block}.book-info{padding:16px 12px 12px;display:flex;flex-direction:column;gap:12px;flex:1}.book-title{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1px;color:var(--light);text-align:center}
-
-/* ✅ MODIFICATION 2 : bouton Amazon avec icône chariot */
+.books-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:20px}
+.book-card{background:var(--card-bg);border-radius:4px;padding:6px;box-shadow:inset 0 0 0 3px #d32f2f;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;width:220px;flex-shrink:0}
+.book-card:hover{transform:translateY(-6px);box-shadow:inset 0 0 0 3px var(--orange),0 20px 40px rgba(255,77,0,0.15)}
+.book-image-wrapper{width:100%;display:flex;align-items:center;justify-content:center;background:#000;border-radius:2px}
+.book-image{width:100%;height:auto;object-fit:contain;display:block}
+.book-info{padding:16px 12px 12px;display:flex;flex-direction:column;gap:12px;flex:1}
+.book-title{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1px;color:var(--light);text-align:center}
+ 
+/* ✅ BOUTON AMAZON — chariot de supermarché blanc, toutes langues */
 .btn-amazon{
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:8px;
+  gap:10px;
   background:var(--orange);
   color:white;
   text-decoration:none;
-  padding:12px 20px;
-  border-radius:2px;
-  font-size:11px;
-  font-weight:600;
-  letter-spacing:1.5px;
+  padding:13px 20px;
+  border-radius:3px;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:15px;
+  letter-spacing:2px;
   text-transform:uppercase;
   margin-top:auto;
-  transition:background 0.2s;
+  transition:background 0.2s,transform 0.1s;
   white-space:nowrap;
   width:100%;
   box-sizing:border-box;
 }
+/* Chariot supermarché — stroke blanc, 2 roues, panier, poignée */
 .btn-amazon::before{
-  content:"🛒";
-  font-size:15px;
+  content:'';
+  display:inline-block;
   flex-shrink:0;
+  width:20px;
+  height:20px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='9' cy='21' r='1'/%3E%3Ccircle cx='20' cy='21' r='1'/%3E%3Cpath d='M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-position:center;
 }
-.btn-amazon:hover{background:#ff6a2a}
-
-footer{text-align:center;padding:40px 20px;border-top:1px solid #1a1a1a;color:var(--gray);font-size:13px}footer strong{color:var(--orange)}
-
+.btn-amazon:hover{background:#ff6a2a;transform:scale(1.02)}
+ 
+footer{text-align:center;padding:40px 20px;border-top:1px solid #1a1a1a;color:var(--gray);font-size:13px}
+footer strong{color:var(--orange)}
+ 
 @media(max-width:600px){
   .books-grid{gap:12px}
-  .book-card{width:calc(50% - 6px)}  /* 2 colonnes sur mobile */
+  .book-card{width:calc(50% - 6px)}
   .highlights-inner{grid-template-columns:1fr 1fr}
 }
-</style></head><body><section class="hero"><img src="https://abdo-edition.github.io/pod/Abdo_Edition_Logo.jpg" alt="Abdo Edition" class="logo-img"><h1>Kasboeken</h1><div class="divider"></div><p>Registreer elke uitgave en elk inkomen!</p></section><section class="highlights"><div class="highlights-inner"><div class="highlight-item"><span class="highlight-icon">💰</span><p class="highlight-title">Alles Bijhouden</p><p class="highlight-text"> Inkomsten, uitgaven en bonnen overzichtelijk op één plek</p></div><div class="highlight-item"><span class="highlight-icon">📦</span><p class="highlight-title">Premium Kwaliteit</p><p class="highlight-text">Gedrukt op hoogwaardig papier, perfecte afwerking</p></div><div class="highlight-item"><span class="highlight-icon">📊</span><p class="highlight-title">Maandelijks Overzicht</p><p class="highlight-text">Maandelijkse samenvatting voor een helder financieel overzicht</p></div><div class="highlight-item"><span class="highlight-icon">✅</span><p class="highlight-title">Belastingen Vereenvoudigen</p><p class="highlight-text">Houd uw financiën onder controle en bespaar tijd bij uw belastingaangifte</p></div></div></section><section class="collection"><p class="section-title">— Onze Kasboeken —</p><div class="books-grid"><div class="book-card">
+</style></head><body>
+ 
+<section class="hero">
+  <img src="https://abdo-edition.github.io/pod/Abdo_Edition_Logo.jpg" alt="Abdo Edition" class="logo-img">
+  <h1>Kasboeken</h1>
+  <div class="divider"></div>
+  <p>Registreer elke uitgave en elk inkomen!</p>
+</section>
+ 
+<section class="highlights">
+  <div class="highlights-inner">
+    <div class="highlight-item"><span class="highlight-icon">💰</span><p class="highlight-title">Alles Bijhouden</p><p class="highlight-text"> Inkomsten, uitgaven en bonnen overzichtelijk op één plek</p></div>
+    <div class="highlight-item"><span class="highlight-icon">📦</span><p class="highlight-title">Premium Kwaliteit</p><p class="highlight-text">Gedrukt op hoogwaardig papier, perfecte afwerking</p></div>
+    <div class="highlight-item"><span class="highlight-icon">📊</span><p class="highlight-title">Maandelijks Overzicht</p><p class="highlight-text">Maandelijkse samenvatting voor een helder financieel overzicht</p></div>
+    <div class="highlight-item"><span class="highlight-icon">✅</span><p class="highlight-title">Belastingen Vereenvoudigen</p><p class="highlight-text">Houd uw financiën onder controle en bespaar tijd bij uw belastingaangifte</p></div>
+  </div>
+</section>
+ 
+<section class="collection">
+  <p class="section-title">— Onze Kasboeken —</p>
+  <div class="books-grid"><div class="book-card">
 <div class="book-image-wrapper">
 <img class="book-image" src="https://images-na.ssl-images-amazon.com/images/P/B0FVV5JZR8.jpg" alt="Kasboek: houd overzicht over inkomsten en uitgaven">
 </div>
@@ -73,4 +89,12 @@ footer{text-align:center;padding:40px 20px;border-top:1px solid #1a1a1a;color:va
 <h2 class="book-title">Kasboek: houd overzicht over inkomsten en uitgaven</h2>
 <a href="https://www.Amazon.nl/dp/B0FTX7JKJQ" target="_blank" class="btn-amazon">Kopen op Amazon</a>
 </div>
-</div></div></section><footer><p>© 2026 <strong>Abdo Edition</strong> — All Rights Reserved</p><p style="margin-top:8px;">Available on <strong>Amazon</strong> 📦</p></footer></body></html>
+</div></div>
+</section>
+ 
+<footer>
+  <p>© 2026 <strong>Abdo Edition</strong> — All Rights Reserved</p>
+  <p style="margin-top:8px;">Available on <strong>Amazon</strong> 📦</p>
+</footer>
+ 
+</body></html>
